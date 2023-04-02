@@ -163,6 +163,9 @@ public class AirportController {
         // and also cancel the ticket that passenger had booked earlier on the given flightId
 
         List<Integer> passengers = flightToPassengerDb.get(flightId);
+        if(passengers == null){
+            return "FAILURE";
+        }
 
 
         if(passengers.contains(passengerId)){

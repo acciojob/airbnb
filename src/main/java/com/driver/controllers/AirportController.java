@@ -226,7 +226,7 @@ public class AirportController {
     public int calculateRevenueOfAFlight(@PathVariable("flightId")Integer flightId){
 
         int noOfPeopleBooked = flightToPassengerDb.get(flightId).size();
-        int variableFare = (noOfPeopleBooked*(noOfPeopleBooked+1))*25;
+        int variableFare = (noOfPeopleBooked*(noOfPeopleBooked-1))*25;
         int fixedFare = 3000*noOfPeopleBooked;
         int totalFare = variableFare + fixedFare;
 

@@ -202,7 +202,7 @@ public class TestCases {
         airportController.bookATicket(1,1);
         airportController.bookATicket(2,2);
         int revenue = airportController.calculateRevenueOfAFlight(1);
-        Assertions.assertEquals(3050, revenue);
+        Assertions.assertEquals(3000, revenue);
     }
     @Test
     public void testAddPassenger(){

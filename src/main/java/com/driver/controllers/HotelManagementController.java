@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @RestController
@@ -118,7 +119,8 @@ public class HotelManagementController {
         hotelDb.put(hotelName,hotel);
         
         int aadharCard = booking.getBookingAadharCard();
-        countOfBookings.put(aadharCard,countOfBookings.get(aadharCard)+1);
+        Integer currentBookings = countOfBookings.get(aadharCard);
+        countOfBookings.put(aadharCard, Objects.nonNull(currentBookings)?1+currentBookings:1);
         return amountToBePaid;
     }
     
@@ -130,7 +132,7 @@ public class HotelManagementController {
     }
 
     @PutMapping("/update-facilities")
-    public List<Facility> updateFacilities(List<Facility> newFacilities,String hotelName){
+    public Hotel updateFacilities(List<Facility> newFacilities,String hotelName){
 
         //We are having a new facilites that a hotel is planning to bring.
         //If the hotel is already having that facility ignore that facility otherwise add that facility in the hotelDb
@@ -153,7 +155,7 @@ public class HotelManagementController {
 
         hotelDb.put(hotelName,hotel);
 
-        return oldFacilities;
+        return hotel;
     }
 
 }

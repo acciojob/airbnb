@@ -1,6 +1,6 @@
 package com.driver.test;
 
-import com.driver.EaseMyTrip;
+import com.driver.AirBnb;
 import com.driver.controllers.HotelManagementController;
 import com.driver.model.*;
 import org.junit.jupiter.api.Test;
@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.*;
 
-@SpringBootTest(classes = EaseMyTrip.class)
+@SpringBootTest(classes = AirBnb.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TestCases {
     HotelManagementController hotelManagementController = new HotelManagementController();

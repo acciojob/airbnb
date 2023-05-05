@@ -21,6 +21,7 @@ public class Booking {
         this.bookingPersonName = bookingPersonName;
         this.hotelName = hotelName;
     }
+
     public Booking(int bookingAadharCard, int noOfRooms, String bookingPersonName, String hotelName) {
         this.bookingAadharCard = bookingAadharCard;
         this.noOfRooms = noOfRooms;
